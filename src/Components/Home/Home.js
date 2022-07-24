@@ -1,12 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, {keyframes} from "styled-components";
 
+
+
 function Home(props) {
+
+    const [oscuro, setOscuro] = useState(true);
+
+    function handleOnClick () {
+        setOscuro(!oscuro);
+    }
+
     return (
         <div>
             <Title>Inicio</Title>
             
             <p>Esta pagina esta hecha para apoyar a solucionar problemas</p>
+
+            <p>Demonstracion de como funcionaria el Cambio de tema</p>
+
+            <div className={"claro"}>
+                Demo de cambio de color de texto y fondo
+                Demo de cambio de color de texto y fondo
+                Demo de cambio de color de texto y fondo
+                Demo de cambio de color de texto y fondo
+            </div>
+
+            <button onClick={handleOnClick}>
+                { oscuro ? "oscurecer" : "aclarecer"}
+            </button>
 
         </div>
     );

@@ -1,9 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
+import { useEffect } from 'react';
 const Header = (props) => {
 
     const {title, url} = props;
+
+    function clock() {
+        let now = new Date().toLocaleTimeString();
+        
+        return <span>{now}</span>;
+    }
+    
+    useEffect(() => {
+        setInterval(() => {
+          }, 1000);
+    })
+
 
         return (
             <header className="App-header">
@@ -14,12 +27,16 @@ const Header = (props) => {
                 <h1>{props.title}</h1>
                 
                 <li><Link to={`/calendar`} className="App-link">Fecha</Link></li>
+                {
+                    clock()
+                    
+                }
             </div>
 
             <ul>
-                <li><Link to={`/`} className="App-link">Home</Link></li>
-                <li><Link to={`/calculadora`} className="App-link">Calc</Link></li>
-                <li><Link to={`/cronometro`} className="App-link">Cronom</Link></li>
+                <li><Link to={`/`} className="App-link">Inicio</Link></li>
+                <li><Link to={`/calculadora`} className="App-link">Calculadora</Link></li>
+                <li><Link to={`/cronometro`} className="App-link">Pomodoro</Link></li>
             </ul>
 
           </header>
