@@ -13,10 +13,13 @@ const Header = (props) => {
                 </a>
                 <h1>{props.title}</h1>
                 
+                <li><Link to={`/calendar`} className="App-link">Fecha</Link></li>
             </div>
 
             <ul>
                 <li><Link to={`/`} className="App-link">Home</Link></li>
+                <li><Link to={`/calculadora`} className="App-link">Calc</Link></li>
+                <li><Link to={`/cronometro`} className="App-link">Cronom</Link></li>
             </ul>
 
           </header>
